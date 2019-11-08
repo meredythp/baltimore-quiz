@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image:url("https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1504281813/baltimore-maryland-skyline-BALTIMORETODO0917.jpg?itok=wZ8pg4dr");
+} 
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+}
+
+.quizContainer {
+  background: rgba(100, 100, 100, 0.2);
+}
