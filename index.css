@@ -1,21 +1,71 @@
 * {
   box-sizing: border-box;
+  /* align-items: center; */
+  
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+html {
+  background-image:url("/Users/meredythplack/code/baltimore-quiz/images/baltimore image.jpg");
+  
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-image:url("https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1504281813/baltimore-maryland-skyline-BALTIMORETODO0917.jpg?itok=wZ8pg4dr");
+  justify-content: center;
+  resize: both;
+  overflow: auto;
 } 
 
 label {
-  display: flex;
-  flex-direction: column;
-  align-items: right;
+  display: inline-block;
+  margin: 5px;
 }
 
 .quizContainer {
-  background: rgba(100, 100, 100, 0.2);
+  background: rgba(255,255,255, 0.95);
+  border-radius: 25px;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: center;
+}
+
+fieldset {
+  border: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: center;
+}
+
+.correctAnswer {
+  color: #798C27;
+  font-weight: bolder;
+}
+
+.wrongAnswer {
+  color: #66313B;
+  font-weight: bolder;
+}
+
+.tracker {
+  color: #6F838C;
+  font-size: 14px;
+}
+
+button {
+  border-radius: 5px;
+  margin: 10px;
 }

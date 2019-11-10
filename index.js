@@ -14,6 +14,7 @@ const STORE = [
     question:
       'What year was Baltimore founded?',
     answers: [
+      '1679',
       '1697',
       '1729',
       'Trick question, the city was never formally established'
@@ -26,6 +27,7 @@ const STORE = [
       'What inspired the city\'s NFL team name?',
     answers: [
       'Edgar Allen Poe\'s The Raven',
+      'Henri Rousseau\'s Tiger in a Tropical Storm',
       'Francis Scott Key\' The Star-Spangled Banner',
       'George Duke\'s The Oriole'
     ],
@@ -62,6 +64,10 @@ let score = 0;
 let questionNumber = 0;
 let correctIndex;
 
+function updateTracker() {
+  $(".tracker").html(`<span>Question: ${questionNumber} | Score: ${score}/5</span>`);
+}
+
 function restart() {
   $('.quizContainer').on('click', '.restartButton', function (event) {
     console.log('restarting')
@@ -76,6 +82,7 @@ function restart() {
 function triviaResults() {
   // show results and restart button
   $('.finalBox').show();
+  $('.finalScore').text(`You scored ${score}/5!`);
 }
 
 // next question
@@ -84,6 +91,7 @@ function getNextQuestion() {
   $('.quizContainer').on('click', '.nextButton', function (event) {
     event.preventDefault();
     questionNumber++;
+    updateTracker();
     $('.questionNumber').text(questionNumber + 1);
     $('.questionBox form').replaceWith(getQuestion());
   });
@@ -91,16 +99,19 @@ function getNextQuestion() {
 
 // wrong answer logic
 function wrongAnswer(selectedIndex) {
-  $(`.question${selectedIndex}`).append(`This incorrect`);
-  $(`.question${correctIndex}`).append(`This is the right answer`);
+  $(`.question${selectedIndex}`).append(`<span class='wrongAnswer'>This selction is incorrect.</span>`);
+  $(`.question${correctIndex}`).append(`<span class='correctAnswer'>This is the right answer.</span>`);
 }
 
 // correct answer logic
 function correctAnswer() {
   score++;
+  updateTracker();
   console.log("score is "+ score);
   console.log("correctIndex is "+ correctIndex);
-  $(`.question${correctIndex}`).append(`You got it right`);
+  // $(`.question${correctIndex}`).append(`This is the right answer`);
+  // $(`.question${correctIndex}`).attr('class', 'correctAnswer');
+  $(`.question${correctIndex}`).append(`<span class='correctAnswer'>You answered correctly!</span>`);
 }
 
 
@@ -165,20 +176,24 @@ function getQuestion() {
     return getQuestionHTML();
   } else {
     // hide question box and show final score 
+    $('.start').hide();
     $('.questionBox').hide();
     triviaResults();
-    // ?
-    $('.questionNumber').text(10);
+    // delete
+    // $('.questionNumber').text(10);
   }
 }
 
 // start logic
 function startLogic() {
    // hide start section and final section
-  $('.start').hide();
-  $('.finalBox').hide()
+  $('.start').show();
+  $('.tracker').remove();
+  $(`<h2 class="tracker"><span>Question: ${questionNumber} | Score: ${score}/5</span></h2>`).appendTo($('.start'));
+  $('.startButton').hide();
+  $('.finalBox').hide();
   // update question number text
-  $('.questionNumber').text(1); 
+  // $('.questionNumber').text(1); 
   // show questions parent html
   $('.questionBox').show();
   // add question
