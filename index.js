@@ -179,8 +179,6 @@ function getQuestion() {
     $('.start').hide();
     $('.questionBox').hide();
     triviaResults();
-    // delete
-    // $('.questionNumber').text(10);
   }
 }
 
@@ -192,8 +190,6 @@ function startLogic() {
   $(`<h2 class="tracker"><span>Question: ${questionNumber} | Score: ${score}/5</span></h2>`).appendTo($('.start'));
   $('.startButton').hide();
   $('.finalBox').hide();
-  // update question number text
-  // $('.questionNumber').text(1); 
   // show questions parent html
   $('.questionBox').show();
   // add question
