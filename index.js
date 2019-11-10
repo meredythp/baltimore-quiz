@@ -82,7 +82,7 @@ function restart() {
 function triviaResults() {
   // show results and restart button
   $('.finalBox').show();
-  $('.finalScore').text(`You scored ${score}/5!`);
+  $('.finalScore').text(`You got ${score} out of 5 questions correct!`);
 }
 
 // next question
