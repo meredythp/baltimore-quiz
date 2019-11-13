@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  background-image:url("./images/baltimore image.jpg");
+  background-image:url("./images/baltimore_image.jpg");
   
   /* Full height */
   height: 100%; 
@@ -22,7 +22,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  resize: both;
+  resize: both; 
   overflow: auto;
 } 
 
