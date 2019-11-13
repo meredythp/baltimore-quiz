@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  background-image:url("baltimore-quiz/images/baltimore image.jpg");
+  background-image:url("./images/baltimore image.jpg");
   
   /* Full height */
   height: 100%; 
