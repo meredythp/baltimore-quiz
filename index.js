@@ -160,7 +160,7 @@ function getQuestionHTML() {
   let fieldSelector = $(questionBlock).find('fieldset');
 
   STORE[questionNumber].answers.forEach(function (answerValue, answerIndex) {
-    $(`<label class="question${answerIndex}" for="${answerIndex}">
+    $(`<label class="question${answerIndex} hover-pointer" for="${answerIndex}">
         <input class="radio" type="radio" name="${questionNumber}" id="${answerIndex}" value="${answerValue}" required>
         <span>${answerValue}</span>
       </label>
